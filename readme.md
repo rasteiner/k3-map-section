@@ -51,7 +51,7 @@ sections:
         label: Map Center
         mapsection: foo
 ```
-This tells the map section that you want to store the center position in the field `arbitraryname`. Notice the keyword `mapsection` in the field, it's value must be unique in the blueprint and the same as the value in `storage`. 
+This tells the map section that you want to store the center position in the field `arbitraryname`. Notice the keyword `mapsection` in the field, its value must be unique in the blueprint and the same as the value in `storage`. 
 
 The center coordinates need to be stored in a field that accepts text, arrays or objects as values. This means you can store them in text fields, hidden fields or the *geocoded* field (which is included in this plugin).
 
