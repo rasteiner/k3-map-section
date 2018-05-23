@@ -46,6 +46,6 @@ export function getCoordsAs(coords, type) {
   } else if (type === Object) {
     return coords
   } else {
-    throw `${this.storage.center} of type ${type} is not supported as coordinate storage`
+    throw `${type} is not supported as coordinate storage`
   }
 }
