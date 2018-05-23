@@ -1,0 +1,19 @@
+{
+  "name": "map-section",
+  "version": "0.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "dependencies": {
+    "poi": "^10.1.9"
+  },
+  "devDependencies": {
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "poi build --source-map none --outDir . --filename.js index.js --filename.css index.css && del index.html"
+  },
+  "author": "",
+  "license": "ISC"
+}
