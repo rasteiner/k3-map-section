@@ -24,6 +24,10 @@ class BlueprintMapSection extends BlueprintSection {
             'storage' => $this->storage
         ];
     }
+
+    public function errors():array {
+        return [];
+    }
 }
 
 \Kirby::plugin('rasteiner/kn-map-section', [
