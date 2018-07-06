@@ -14,7 +14,8 @@
     
     async mounted() {
       
-      const data = await this.$api.section(this.parent, this.name)
+      //const data = await this.$api.section(this.parent, this.name)
+      const data = await this.$api.get(`${this.parent}/${this.name}`);
 
       if(data.error) {
         this.error = data.error
