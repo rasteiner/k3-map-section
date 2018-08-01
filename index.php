@@ -19,7 +19,7 @@ class BlueprintMapSection extends BlueprintSection {
 
     public function toArray():array {
         return [
-            'apikey' => kirby()->option('rasteiner/kn-map-section/apikey'),
+            'config' => kirby()->option('rasteiner.MapSection'),
             'height' => $this->height,
             'storage' => $this->storage
         ];

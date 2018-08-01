@@ -4,14 +4,16 @@ A Kirby 3 plugin to manipulate and store map related information.
 ## Installation
 Download and copy folder to /site/plugins/mapsection
 
-You need a google API browser key with access to the Maps Javascript API and the Geolocation service. 
+You need a google API browser key with access to the Maps Javascript API. 
 Then you need to set that in your **config.php** file, like this:
 ```php
 <?php
 
 return [
   //...
-  'rasteiner/kn-map-section/apikey' => 'YOUR API KEY HERE',
+  'rasteiner.MapSection' => [
+    'key' => 'YOUR API KEY HERE',
+  ],
   //...
 ];
 ``` 
@@ -41,7 +43,7 @@ sections:
   mymap:
     type: map
     storage:
-      center: foo
+      center: arbitraryname
 
   myfields:
     type: fields
@@ -49,11 +51,10 @@ sections:
       arbitraryname:
         type: text
         label: Map Center
-        mapsection: foo
 ```
-This tells the map section that you want to store the center position in the field `arbitraryname`. Notice the keyword `mapsection` in the field, its value must be unique in the blueprint and the same as the value in `storage`. 
+This tells the map section that you want to store the center position in the field `arbitraryname`
 
-The center coordinates need to be stored in a field that accepts text, arrays or objects as values. This means you can store them in text fields, hidden fields or the *geocoded* field (which is included in this plugin).
+The center coordinates need to be stored in a field that accepts text, arrays or objects as values. This means you can store them in text fields, hidden fields or future compatible fields that store the coordinates as objects.
 
 You can do the same with the zoom level. Storable in text, hidden, range or number fields. 
 
@@ -62,66 +63,39 @@ sections:
   mymap:
     type: map
     storage:
-      center: foo
-      zoom: bar
+      zoom: myzoomlevel
 
   myfields:
     type: fields
     fields:
-      arbitraryname:
-        type: text
-        label: Map Center
-        mapsection: foo
       myzoomlevel:
         type: range
         min: 0
         max: 22
         step: 1
-        mapsection: bar
 ```
 
 At last you can also store markers in a structure field (or any future field that accepts arrays as values). 
-Each structure item needs to have at least a `coords` field. The `geocoded` field is recommended. 
+Each structure item needs to have at least a `coords` field. 
 The field name `title` is also recognized as marker title (should work with any type that saves as text).
 
-
-### Complete blueprint example
-
 ```yaml
-columns:
-  - 1/2: mymap
-  - 1/2: myfields
-
 sections:
   mymap:
     type: map
-    height: huge
     storage:
-      center: foo
-      zoom: bar
-      markers: qux
+      markers: arbitrarymarkersname
 
   myfields:
     type: fields
     fields:
-      arbitraryname:
-        type: geocoded
-        label: Map Center
-        mapsection: foo
-      arbitraryzoomname:
-        type: range
-        label: Zoom
-        min: 0
-        max: 22
-        step: 1
-        mapsection: bar
       arbitrarymarkersname:
         type: structure
         label: Markers
         mapsection: qux
         fields:
           coords:
-            type: geocoded
+            type: text
             label: Position
           title:
             type: text
@@ -131,6 +105,50 @@ sections:
             label: Description
 ```
 
-## The geocoded field
+### Complete blueprint example
 
-The included geocoded field is a textfield that stores coordinates and a query text. It also has the ability to geocode the query text into coordinates (click the magnifying glass). 
+```yaml
+  columns:
+    - 1/2: mymap
+    - 1/2: myfields
+
+  sections:
+    mymap:
+      type: map
+      height: huge
+      storage:
+        center: arbitraryname
+        zoom: arbitraryzoomname
+        markers: arbitrarymarkersname
+
+    myfields:
+      type: fields
+      fields:
+        arbitraryname:
+          type: text
+          label: Map Center
+        arbitraryzoomname:
+          type: text
+          label: Zoom
+          min: 0
+          max: 22
+          step: 1
+        arbitrarymarkersname:
+          type: structure
+          label: Markers
+          fields:
+            coords:
+              type: text
+              label: Position
+            title:
+              type: text
+              label: Title
+            otherfields:
+              type: textarea
+              label: Description
+```
+
+## Other Map Providers
+
+It's technically possible to register other map providers (like OpenStreetMap, Azure Maps, etc...) in plugins.
+Compatible plugins will be listed here. 
