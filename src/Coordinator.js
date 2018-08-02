@@ -13,7 +13,7 @@ export default function(Vue) {
     },
     methods: {
       getAcceptedType(field) {
-        let component = Vue.options.components['kirby-' + field.type + '-field']
+        let component = Vue.options.components['k-' + field.type + '-field']
         if (!component) {
           console.warn('Mapsection could not update form: Unknown field type "' + this.fields[k].type + '"')
           return null
@@ -107,8 +107,8 @@ export default function(Vue) {
   })
 
   //replace fields section
-  const original = Vue.options.components["kirby-fields-section"]
-  Vue.component('kirby-fields-section', {
+  const original = Vue.options.components["k-fields-section"]
+  Vue.component('k-fields-section', {
     extends: original,
     created() {
       this.$mapsection.registerFields(this)
