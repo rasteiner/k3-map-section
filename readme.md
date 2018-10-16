@@ -108,44 +108,44 @@ sections:
 ### Complete blueprint example
 
 ```yaml
-  columns:
-    - 1/2: mymap
-    - 1/2: myfields
+columns:
+  - width: 1/2
+    sections:
+      mymap:
+        type: map
+        height: huge
+        storage:
+          center: arbitraryname
+          zoom: arbitraryzoomname
+          markers: arbitrarymarkersname
 
-  sections:
-    mymap:
-      type: map
-      height: huge
-      storage:
-        center: arbitraryname
-        zoom: arbitraryzoomname
-        markers: arbitrarymarkersname
-
-    myfields:
-      type: fields
-      fields:
-        arbitraryname:
-          type: text
-          label: Map Center
-        arbitraryzoomname:
-          type: text
-          label: Zoom
-          min: 0
-          max: 22
-          step: 1
-        arbitrarymarkersname:
-          type: structure
-          label: Markers
-          fields:
-            coords:
-              type: text
-              label: Position
-            title:
-              type: text
-              label: Title
-            otherfields:
-              type: textarea
-              label: Description
+  - width: 1/2
+    sections:
+      myfields:
+        type: fields
+        fields:
+          arbitraryname:
+            type: text
+            label: Map Center
+          arbitraryzoomname:
+            type: text
+            label: Zoom
+            min: 0
+            max: 22
+            step: 1
+          arbitrarymarkersname:
+            type: structure
+            label: Markers
+            fields:
+              coords:
+                type: text
+                label: Position
+              title:
+                type: text
+                label: Title
+              otherfields:
+                type: textarea
+                label: Description
 ```
 
 ## Other Map Providers
