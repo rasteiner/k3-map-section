@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2 - 0.1.3
+ - added new build
+ - circleci
+ - composer install
+ - only modern browsers supported to enhance performance
+
 ## 0.1.1
  - k-pax compatibility
 

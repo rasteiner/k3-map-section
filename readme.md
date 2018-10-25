@@ -2,8 +2,15 @@
 A Kirby 3 plugin to manipulate and store map related information.
 
 ## Installation
-Download and copy folder to /site/plugins/mapsection
 
+### Install with composer
+Run `composer require rasteiner/k3-map-section` 
+
+### Download a zip
+Download a the latest zip file from the relases tab on github.  
+Extract the contents into a folder in your `site/plugins` folder. 
+
+## Configuration
 You need a google API browser key with access to the Maps Javascript API. 
 Then you need to set that in your **config.php** file, like this:
 ```php
