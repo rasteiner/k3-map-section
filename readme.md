@@ -7,7 +7,7 @@ A Kirby 3 plugin to manipulate and store map related information.
 Run `composer require rasteiner/k3-map-section` 
 
 ### Download a zip
-Download a the latest zip file from the relases tab on github.  
+Download [the latest zip](https://github.com/rasteiner/k3-map-section/releases/latest) file from the relases tab on github.  
 Extract the contents into a folder in your `site/plugins` folder. 
 
 ## Configuration
