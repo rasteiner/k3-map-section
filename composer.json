@@ -1,0 +1,19 @@
+{
+  "name": "rasteiner/k3-map-section",
+  "description": "K3 plugin. A section for displaying maps.",
+  "authors": [
+    {
+      "name": "Roman Steiner",
+      "email": "roman@toastlab.ch"
+    }
+  ],
+  "require": {
+    "getkirby/cms": "*"
+  },
+  "license": "ISC",
+  "autoload": {
+    "files": [
+      "index.php"
+    ]
+  }
+}
