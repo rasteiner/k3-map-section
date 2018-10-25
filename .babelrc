@@ -1,6 +1,17 @@
 {
   "presets": [
-    "env"
+    ["env", {
+      "targets": {
+        "browsers": [
+          "edge >= 15",
+          "firefox >= 53",
+          "chrome >= 55",
+          "safari >= 11",
+          "opera >= 42",
+          "iOS >= 10.3"
+        ]
+      }
+    }]
   ],
   "plugins": [
     "transform-object-rest-spread"
