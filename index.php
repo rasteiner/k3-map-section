@@ -17,20 +17,5 @@ Kirby::plugin('rasteiner/kn-map-section', [
 				}
 			],
 		]
-	],
-    'fields' => [
-        'latlng' => [
-
-        ],
-        'geocoded' => [
-            'props' => [
-                'apikey' => function() {
-                    return kirby()->option('rasteiner/kn-map-section/apikey');
-                },
-                'value' => function($value = '') {
-                    return Yaml::decode($value);
-                }
-            ]
-        ]
-    ]
+	]
 ]);
