@@ -1,3 +1,8 @@
+Repository is archived and the plugin does not work with current versions of Kirby. Do not install.
+
+-----
+
+
 # Kirby 3 map section plugin
 A Kirby 3 plugin to manipulate and store map related information.
 
